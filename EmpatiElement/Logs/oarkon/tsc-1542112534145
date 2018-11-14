@@ -1,0 +1,322 @@
+c3:35:34 PM - Starting compilation in watch mode...
+
+
+3:35:36 PM - Found 0 errors. Watching for file changes.
+c3:36:32 PM - File change detected. Starting incremental compilation...
+
+
+3:36:32 PM - Found 0 errors. Watching for file changes.
+c3:36:51 PM - File change detected. Starting incremental compilation...
+
+
+3:36:51 PM - Found 0 errors. Watching for file changes.
+c3:36:51 PM - File change detected. Starting incremental compilation...
+
+
+3:36:51 PM - Found 0 errors. Watching for file changes.
+c3:36:53 PM - File change detected. Starting incremental compilation...
+
+
+3:36:53 PM - Found 0 errors. Watching for file changes.
+c3:37:02 PM - File change detected. Starting incremental compilation...
+
+
+3:37:02 PM - Found 0 errors. Watching for file changes.
+c3:37:03 PM - File change detected. Starting incremental compilation...
+
+
+3:37:03 PM - Found 0 errors. Watching for file changes.
+c3:37:26 PM - File change detected. Starting incremental compilation...
+
+
+3:37:26 PM - Found 0 errors. Watching for file changes.
+c3:37:31 PM - File change detected. Starting incremental compilation...
+
+
+3:37:31 PM - Found 0 errors. Watching for file changes.
+c3:39:55 PM - File change detected. Starting incremental compilation...
+
+
+3:39:55 PM - Found 0 errors. Watching for file changes.
+c3:40:28 PM - File change detected. Starting incremental compilation...
+
+
+3:40:28 PM - Found 0 errors. Watching for file changes.
+c3:41:30 PM - File change detected. Starting incremental compilation...
+
+
+3:41:30 PM - Found 0 errors. Watching for file changes.
+c3:41:38 PM - File change detected. Starting incremental compilation...
+
+
+3:41:38 PM - Found 0 errors. Watching for file changes.
+c3:41:42 PM - File change detected. Starting incremental compilation...
+
+
+3:41:42 PM - Found 0 errors. Watching for file changes.
+c3:42:07 PM - File change detected. Starting incremental compilation...
+
+
+3:42:07 PM - Found 0 errors. Watching for file changes.
+c3:42:15 PM - File change detected. Starting incremental compilation...
+
+
+3:42:15 PM - Found 0 errors. Watching for file changes.
+c3:42:17 PM - File change detected. Starting incremental compilation...
+
+
+3:42:17 PM - Found 0 errors. Watching for file changes.
+c3:42:35 PM - File change detected. Starting incremental compilation...
+
+
+3:42:35 PM - Found 0 errors. Watching for file changes.
+c3:42:54 PM - File change detected. Starting incremental compilation...
+
+
+3:42:54 PM - Found 0 errors. Watching for file changes.
+c3:43:25 PM - File change detected. Starting incremental compilation...
+
+
+3:43:25 PM - Found 0 errors. Watching for file changes.
+c3:43:36 PM - File change detected. Starting incremental compilation...
+
+
+3:43:36 PM - Found 0 errors. Watching for file changes.
+c3:43:40 PM - File change detected. Starting incremental compilation...
+
+
+3:43:40 PM - Found 0 errors. Watching for file changes.
+c3:44:31 PM - File change detected. Starting incremental compilation...
+
+
+3:44:31 PM - Found 0 errors. Watching for file changes.
+c3:54:24 PM - File change detected. Starting incremental compilation...
+
+
+3:54:24 PM - Found 0 errors. Watching for file changes.
+c3:58:47 PM - File change detected. Starting incremental compilation...
+
+
+3:58:48 PM - Found 0 errors. Watching for file changes.
+c3:59:27 PM - File change detected. Starting incremental compilation...
+
+
+3:59:27 PM - Found 0 errors. Watching for file changes.
+c4:00:40 PM - File change detected. Starting incremental compilation...
+
+
+4:00:41 PM - Found 0 errors. Watching for file changes.
+c4:01:08 PM - File change detected. Starting incremental compilation...
+
+
+4:01:08 PM - Found 0 errors. Watching for file changes.
+c4:02:55 PM - File change detected. Starting incremental compilation...
+
+
+4:02:55 PM - Found 0 errors. Watching for file changes.
+c4:05:18 PM - File change detected. Starting incremental compilation...
+
+
+4:05:18 PM - Found 0 errors. Watching for file changes.
+c4:10:36 PM - File change detected. Starting incremental compilation...
+
+
+4:10:36 PM - Found 0 errors. Watching for file changes.
+c4:13:01 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(25,3): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected.
+Source/Index.ts(26,1): error TS1128: Declaration or statement expected.
+
+4:13:01 PM - Found 2 errors. Watching for file changes.
+c4:17:11 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(44,1): error TS1005: ',' expected.
+Source/Index.ts(47,7): error TS1005: ';' expected.
+Source/Index.ts(47,12): error TS1005: ';' expected.
+Source/Index.ts(47,32): error TS1005: ';' expected.
+Source/Index.ts(49,11): error TS1005: ';' expected.
+
+4:17:11 PM - Found 5 errors. Watching for file changes.
+c4:17:21 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(44,1): error TS1005: ',' expected.
+Source/Index.ts(47,7): error TS1005: ';' expected.
+Source/Index.ts(47,12): error TS1005: ';' expected.
+Source/Index.ts(47,32): error TS1005: ';' expected.
+Source/Index.ts(49,11): error TS1005: ';' expected.
+
+4:17:21 PM - Found 5 errors. Watching for file changes.
+c4:18:41 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(44,3): error TS1005: ',' expected.
+
+4:18:41 PM - Found 1 error. Watching for file changes.
+c4:19:01 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(43,3): error TS1005: ',' expected.
+
+4:19:01 PM - Found 1 error. Watching for file changes.
+c4:20:40 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(43,3): error TS1005: ',' expected.
+
+4:20:40 PM - Found 1 error. Watching for file changes.
+c4:21:26 PM - File change detected. Starting incremental compilation...
+
+
+4:21:26 PM - Found 0 errors. Watching for file changes.
+c4:23:06 PM - File change detected. Starting incremental compilation...
+
+
+4:23:06 PM - Found 0 errors. Watching for file changes.
+c4:24:09 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(49,14): error TS1005: ';' expected.
+Source/Index.ts(49,15): error TS1005: ';' expected.
+Source/Index.ts(49,18): error TS1005: ';' expected.
+Source/Index.ts(49,24): error TS1005: ';' expected.
+Source/Index.ts(49,25): error TS1005: ';' expected.
+Source/Index.ts(50,23): error TS1005: ';' expected.
+Source/Index.ts(50,24): error TS1005: ';' expected.
+
+4:24:09 PM - Found 7 errors. Watching for file changes.
+c4:24:25 PM - File change detected. Starting incremental compilation...
+
+
+4:24:25 PM - Found 0 errors. Watching for file changes.
+c4:30:41 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(23,1): error TS1238: Unable to resolve signature of class decorator when called as an expression.
+
+4:30:41 PM - Found 1 error. Watching for file changes.
+c4:30:55 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(23,20): error TS1146: Declaration expected.
+
+4:30:55 PM - Found 1 error. Watching for file changes.
+c4:34:56 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(23,20): error TS1146: Declaration expected.
+
+4:34:56 PM - Found 1 error. Watching for file changes.
+c4:35:03 PM - File change detected. Starting incremental compilation...
+
+
+4:35:03 PM - Found 0 errors. Watching for file changes.
+c4:35:33 PM - File change detected. Starting incremental compilation...
+
+
+4:35:34 PM - Found 0 errors. Watching for file changes.
+c4:36:20 PM - File change detected. Starting incremental compilation...
+
+
+4:36:20 PM - Found 0 errors. Watching for file changes.
+c4:36:23 PM - File change detected. Starting incremental compilation...
+
+
+4:36:23 PM - Found 0 errors. Watching for file changes.
+c4:36:47 PM - File change detected. Starting incremental compilation...
+
+
+4:36:47 PM - Found 0 errors. Watching for file changes.
+c4:37:09 PM - File change detected. Starting incremental compilation...
+
+
+4:37:09 PM - Found 0 errors. Watching for file changes.
+c4:37:21 PM - File change detected. Starting incremental compilation...
+
+
+4:37:21 PM - Found 0 errors. Watching for file changes.
+c4:37:36 PM - File change detected. Starting incremental compilation...
+
+Source/Index.ts(31,30): error TS1005: ';' expected.
+
+4:37:36 PM - Found 1 error. Watching for file changes.
+c4:37:38 PM - File change detected. Starting incremental compilation...
+
+
+4:37:38 PM - Found 0 errors. Watching for file changes.
+c4:48:33 PM - File change detected. Starting incremental compilation...
+
+
+4:48:33 PM - Found 0 errors. Watching for file changes.
+c4:50:15 PM - File change detected. Starting incremental compilation...
+
+
+4:50:15 PM - Found 0 errors. Watching for file changes.
+c4:50:17 PM - File change detected. Starting incremental compilation...
+
+
+4:50:17 PM - Found 0 errors. Watching for file changes.
+c4:50:39 PM - File change detected. Starting incremental compilation...
+
+
+4:50:39 PM - Found 0 errors. Watching for file changes.
+c4:50:39 PM - File change detected. Starting incremental compilation...
+
+
+4:50:39 PM - Found 0 errors. Watching for file changes.
+c4:50:40 PM - File change detected. Starting incremental compilation...
+
+
+4:50:40 PM - Found 0 errors. Watching for file changes.
+c4:50:46 PM - File change detected. Starting incremental compilation...
+
+
+4:50:46 PM - Found 0 errors. Watching for file changes.
+c4:50:53 PM - File change detected. Starting incremental compilation...
+
+
+4:50:53 PM - Found 0 errors. Watching for file changes.
+c4:51:06 PM - File change detected. Starting incremental compilation...
+
+
+4:51:06 PM - Found 0 errors. Watching for file changes.
+c4:51:40 PM - File change detected. Starting incremental compilation...
+
+
+4:51:40 PM - Found 0 errors. Watching for file changes.
+c4:51:43 PM - File change detected. Starting incremental compilation...
+
+
+4:51:43 PM - Found 0 errors. Watching for file changes.
+c4:58:43 PM - File change detected. Starting incremental compilation...
+
+
+4:58:43 PM - Found 0 errors. Watching for file changes.
+c4:58:52 PM - File change detected. Starting incremental compilation...
+
+
+4:58:52 PM - Found 0 errors. Watching for file changes.
+c4:59:14 PM - File change detected. Starting incremental compilation...
+
+
+4:59:14 PM - Found 0 errors. Watching for file changes.
+c4:59:18 PM - File change detected. Starting incremental compilation...
+
+
+4:59:18 PM - Found 0 errors. Watching for file changes.
+c4:59:19 PM - File change detected. Starting incremental compilation...
+
+
+4:59:19 PM - Found 0 errors. Watching for file changes.
+c5:00:07 PM - File change detected. Starting incremental compilation...
+
+
+5:00:07 PM - Found 0 errors. Watching for file changes.
+c5:11:02 PM - File change detected. Starting incremental compilation...
+
+
+5:11:02 PM - Found 0 errors. Watching for file changes.
+c5:11:06 PM - File change detected. Starting incremental compilation...
+
+
+5:11:06 PM - Found 0 errors. Watching for file changes.
+c5:11:25 PM - File change detected. Starting incremental compilation...
+
+
+5:11:25 PM - Found 0 errors. Watching for file changes.
+c5:11:35 PM - File change detected. Starting incremental compilation...
+
+
+5:11:35 PM - Found 0 errors. Watching for file changes.
