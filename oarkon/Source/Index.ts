@@ -1,5 +1,5 @@
 import Manager, { ViewManager, Execute, MetaManager } from "./Lib/Managers";
-import { html, CustomElement } from "./Lib/Particles";
+import { html, CustomElement, TemplateResult } from "./Lib/Particles";
 import EmpatiElement from "./Lib/Element";
 import { Request } from "./Lib/Particles/RestParticle";
 import { Query, QueryAll } from "./Lib/Particles/QSParticle";
@@ -28,6 +28,9 @@ class Test extends EmpatiElement {
   }
 }
 
+/*  */
+/* //ANCHOR NAVBAR==================== */
+/*  */
 @CustomElement
 class Navbar extends EmpatiElement {
 
@@ -98,7 +101,9 @@ class Navbar extends EmpatiElement {
   }
 }
 
-
+/*  */
+/* //ANCHOR Dropdown==================== */
+/*  */
 @CustomElement
 class Dropdown extends OArkonElement {
   @Property
@@ -169,10 +174,22 @@ class Dropdown extends OArkonElement {
   MouseOut(){
     this.HoverStatus = false;
   } */
+/*  */
+/* // ANCHOR MODAL==================== */
+/*  */
+
+declare global {
+  interface Window { Modal: Modal }
+}
 @Execute
 class Modal extends Manager {
   /** Her zaman gorunur olunmasi isteniyorsa true olmalidir. */
   @Property displayStatus: boolean = false;
+  @Property template: TemplateResult;
+
+  Constr() {
+    window.Modal = this;
+  }
 
   @Event("click", window)
   BackdropClick(Event: MouseEvent) {
@@ -193,8 +210,9 @@ class Modal extends Manager {
     return false;
   }
 
-  ModalOpen(Event?: MouseEvent) {
+  ModalOpen(Event?: MouseEvent, Template: TemplateResult) {
     this.displayStatus = true;
+    this.template = Template;
     if (Event) Event.stopPropagation();
   }
 
@@ -222,7 +240,7 @@ class Modal extends Manager {
       display: ${this.displayStatus ? "block" : "none"};
     }
     #Modal{
-      width: 400px;
+    max-width:1080px;
     position: absolute;
     top: 45%;
     left: 50%;
@@ -245,15 +263,16 @@ class Modal extends Manager {
     </style>
     <div id="Modal">
       <a id="Close" class="modal-close">Close!</a>
-    <h1>This Window Open Cause U Clicked Button!</h1>
-    <span >Thanks For Click...!</span>
+    ${this.template}
     </div>
     `
   }
 }
 
 
-
+/*  */
+/* // ANCHOR Button==================== */
+/*  */
 @CustomElement
 class Button extends OArkonElement {
 
@@ -270,16 +289,13 @@ class Button extends OArkonElement {
          opacity: 1;
          transition: .15s;
          display:inline-block;
+         cursor:pointer;
        }
 
        [hover] {
          opacity: .2;
-
        }
 
-       [hidden] {
-         opacity: 0;
-       }
      </style>
      <span ?hover=${this.HoverStatus}>Modal Button</span>
    `;
@@ -287,21 +303,36 @@ class Button extends OArkonElement {
 
   @Event("click")
   OnClick(Event: MouseEvent) {
-    const ModalInstance = document.querySelector(Modal.toString()) as Modal;
-    ModalInstance.ModalOpen(Event);
+    window.Modal.ModalOpen(Event, html`
+      <h1>This Window Open Cause U Clicked Button!</h1>
+      <span>Thanks For Click...!</span>`);
   }
 
 }
+/*  */
+/* //ANCHOR SideButton==================== */
+/*  */
+
+@BooleanEventSwitchParticle
+class OarkonManager extends Manager {
+  static Namespace = "oarkon"
+}
 
 @Execute
-class SideButton extends Manager {
+class SideButton extends OarkonManager {
 
   @Property
   @Switch("mouseover", "mouseout") Hover: boolean = false;
 
-  @Event("click")
-  OpenSide() {
+  @Attribute
+  HiddenNav: Boolean = true;
 
+  @Attribute
+  left: boolean = true;
+
+  @Event("click")
+  OpenSide(Event: MouseEvent) {
+    this.HiddenNav = !this.HiddenNav;
   }
 
   Style = {};
@@ -314,54 +345,245 @@ class SideButton extends Manager {
          padding: 8px 16px;
          background-color: grey;
          opacity: 1;
+         top:150px;
          transition: .15s;
-         display:inline-flex;
          position:fixed;
-         left:0;
-         top:0;
-         transform: rotate(90deg);
-
+         left:15px;
+         transform: rotate(-90deg);
+         transform-origin: left;
+         box-shadow: -1px 1px 16px 3px black;
+         cursor:pointer;
        }
 
        [hover] {
          opacity: .2;
        }
-
-       [hidden] {
-         opacity: 0;
+      
+       :host([left]){
+         left:auto;
+         right:270px;
+         transform: rotate(90deg);
+         transform-origin: right top;
        }
+
+       :host([HiddenNav]){
+         right:0;
+       }
+       
      </style>
-     <span ?hover=${this.Hover}>SideNav Button</span>
+     <osman  ?hover=${this.Hover}>SideNav Button</osman>
    `;
   }
 }
 
-@CustomElement
-class SideNav extends OArkonElement {
+/*  //!TODO hiddendan cikartmam lazim cunku hidden dogrudan opacity i etkiliyor onun yerine -270 vericem...   */
+/*  */
+/* //ANCHOR SideNav==================== */
+/*  */
+@Execute
+class SideNav extends OarkonManager {
+
+  @Attribute SideNav: boolean = true;
+
+
+  @Event("@HiddenNav", document.querySelector("oarkon-side-button") as any)
+  onClick(Event: CustomEvent) {
+    this.SideNav = Event.detail.New;
+  }
+
+  Style = {};
+
   Render() {
     return html`
     <style>
-    
+      :host{
+        width:270px;
+        top:0;
+        bottom:0;
+        right:0;
+        height:100%;
+        margin:0;
+        position:fixed; 
+        pointer-events:none; 
+        transition-timing-function:ease-in-out;   
+        transition: .15s; 
+      }
+      #sidebar{
+        width:300px;
+        height:100%;
+        position:relative;
+        background-color:red;
+      }
+      :host([sidenav]){
+        right:-270px;
+        pointer-events:auto;  
+       }
     </style>
-    <div>
-
+    <div id="sidebar">
+      </br>
+      asdsads
     </div>
     `;
   }
 }
 
+/* //ANCHOR  Image Slider!!!*/
+
+@CustomElement
+class SliderModal extends OArkonElement {
+  @Property Current: number = 0;
+
+  @Property Images: string[];
+
+  @Event("click", "#Right")
+  Right(Event?: MouseEvent) {
+    console.log(this.Current);
+    if (this.Current < this.Images.length - 1)
+      this.Current++;
+    if (Event) Event.stopPropagation();
+  }
+
+  @Event("click", "#Left")
+  Left(Event?: MouseEvent) {
+    console.log(this.Current);
+    if (this.Current > 0)
+      this.Current--;
+    if (Event) Event.stopPropagation();
+  }
+
+  Render() {
+    return html`
+    <style>    
+    #image{
+       max-width: 100%;
+        max-height: calc(100vh - 35vh);
+        flex-shrink: 0;
+        vertical-align: middle;
+
+    }    
+     .wrapper{
+         margin: auto;
+        display: block;
+        width: 90%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 60px;
+      }
+      .close {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          transition: 0.3s;
+          cursor:pointer;
+      }
+      .wrap-image {
+        border: 2px solid #FFF;
+        vertical-align: middle;
+        opacity: .6;
+      }
+
+      [active] {
+        opacity: 1;
+      }
+
+      .wrap-image + .wrap-image {
+        margin-left: 4px;
+      }
+
+      .wrap-image img {
+        vertical-align: middle;
+        width: 142.22px;
+        height: 80px;
+        object-fit: cover;
+      }
+
+      #Left {
+        display: ${this.Current == 0 ? "none" : "flex"};
+        position:fixed;
+        left:-19px;
+        padding:30px;
+        bottom:50%;
+        font-size:30px;
+      }
+
+      .wrapImage{
+        padding-left: 4px;
+        padding-right: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      #Right {
+        position:fixed;
+        font-size:30px;
+        padding:30px;
+        width:${window.length};
+        right:-19px;
+        bottom:50%;
+        display: ${this.Current == this.Images.length - 1 ? "none" : "flex"};
+      }
 
 
+    </style>
+      <img id="image" src="${this.Images[this.Current]}">
+      <div id="Left"><</div>
+      <div id="Right">></div>
+
+      <div class="wrapper">
+        <div class="wrapImage">          
+          ${this.Images.map((x, i) => html`
+          <div class="wrap-image" ?active=${this.Current == i} @click=${() => { this.Current = i }}>
+            <img src=${x}>
+          </div>
+        `)}
+        </div>
+      </div>
+    `;
+  }
+
+}
+
+@CustomElement
+class Slider extends OArkonElement {
+  @Property Current: number = 0;
+
+  @Property Images: string[] = ["https://picsum.photos/1920/1080/?random", "https://picsum.photos/g/668/554", "http://image.istanbul.net.tr/uploads/2017/12/event/masterpiece-galata-resim-kedi.jpg", "https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2016/12/masterpiece-at-51062.jpg"];
+
+
+  @Event("click", "#image")
+  ImageClick(Event: MouseEvent) {
+    window.Modal.ModalOpen(Event, html`<oarkon-slider-modal .Current=${this.Current} .Images=${this.Images}></oarkon-slider-modal>`);
+  }
+
+  Render() {
+    return html`
+      <img id="image" src="${this.Images[this.Current]}" style="width:100%;max-width:300px">
+    `;
+  }
+}
+
+
+/*  */
+/* //ANCHOR Managers==================== */
+/*  */
 
 @Execute
 class Body extends ViewManager {
 
   Render() {
     return html`
-    ${new Test}
-    <oarkon-button></oarkon-button>
-    ${new Navbar}
-    `;
+    ${ new Test}
+    <oarkon-button> </oarkon-button>
+    ${ new Navbar}
+    <oarkon-slider> </oarkon-slider>
+      `;
   }
 }
 
@@ -371,9 +593,26 @@ class Meta extends MetaManager {
   Manifest = {
     description: "test page"
   };
+
+  Render() {
+    return html`
+    ${ super.Render()}
+    <style>
+      html, body {
+      margin: 0;
+    }
+    </style>
+      `;
+  }
 }
 
 /*  opacity: ${this.HoverStatus ? .2 : 1};
  */
 
  /* Opacıty 0 yap pointer none transition ekleyebilirsin */
+/* 
+<!--modal.prototype.render --> */
+/*
+    modalImage.src = this.src;
+    const captionSlider = document.getElementById("caption");
+    captionSlider.innerHTML = this.alt; */
